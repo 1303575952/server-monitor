@@ -1,5 +1,7 @@
 package com.sxu.entity.host;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
@@ -8,6 +10,8 @@ import java.util.Date;
 /**
  * @Description: 查看TCP连接状态
  */
+@Getter
+@Setter
 public class TcpState implements Serializable {
 
     private static final long serialVersionUID = -299667815095138020L;
