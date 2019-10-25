@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.log.LogInfoDao">
-    <resultMap id="resultMap" type="com.sxu.entity.log.LogInfo">
+<mapper namespace="com.dao.log.LogInfoDao">
+    <resultMap id="resultMap" type="com.entity.log.LogInfo">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="ACCOUNT" property="account" jdbcType="CHAR"/>
         <result column="HOST_NAME" property="hostname" jdbcType="CHAR"/>
@@ -55,7 +55,7 @@
         </foreach>
     </delete>
 
-    <insert id="save" parameterType="com.sxu.entity.log.LogInfo">
+    <insert id="save" parameterType="com.entity.log.LogInfo">
         INSERT INTO LOG_INFO
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.app.AppStateDao">
-    <resultMap id="resultMap" type="com.sxu.entity.app.AppState">
+<mapper namespace="com.dao.app.AppStateDao">
+    <resultMap id="resultMap" type="com.entity.app.AppState">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="APP_INFO_ID" property="appInfoId" jdbcType="CHAR"/>
         <result column="CPU_PER" property="cpuPer" jdbcType="CHAR"/>
@@ -19,6 +19,7 @@
         FROM APP_STATE
         WHERE ID=#{id}
     </select>
+
 
     <delete id="deleteByAppInfoId" parameterType="java.lang.String">
 		DELETE FROM APP_STATE WHERE  APP_INFO_ID  = #{appInfoId} 
@@ -47,7 +48,8 @@
         </foreach>
     </delete>
 
-    <insert id="save" parameterType="com.sxu.entity.app.AppState">
+
+    <insert id="save" parameterType="com.entity.app.AppState">
         INSERT INTO APP_STATE
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>
@@ -65,12 +67,14 @@
         </trim>
     </insert>
 
+
     <insert id="insertList" parameterType="java.util.List">
         INSERT INTO APP_STATE (ID, APP_INFO_ID, CPU_PER,MEM_PER,CREATE_TIME) VALUES
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.id},#{item.appInfoId},#{item.cpuPer},#{item.memPer},#{item.createTime})
         </foreach>
     </insert>
+
 
     <select id="selectAllByParams" parameterType="map" resultMap="resultMap">
         SELECT
@@ -101,5 +105,6 @@
         </where>
         ORDER BY CREATE_TIME DESC
     </select>
+
 
 </mapper>

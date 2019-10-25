@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.host.SysLoadStateDao">
-    <resultMap id="resultMap" type="com.sxu.entity.host.SysLoadState">
+<mapper namespace="com.dao.host.SysLoadStateDao">
+    <resultMap id="resultMap" type="com.entity.host.SysLoadState">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="ACCOUNT_ID" property="accountId" jdbcType="CHAR"/>
         <result column="ACCOUNT" property="account" jdbcType="CHAR"/>
@@ -61,7 +61,7 @@
         </foreach>
     </delete>
 
-    <insert id="save" parameterType="com.sxu.entity.host.SysLoadState">
+    <insert id="save" parameterType="com.entity.host.SysLoadState">
         INSERT INTO SYS_LOAD_STATE
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>

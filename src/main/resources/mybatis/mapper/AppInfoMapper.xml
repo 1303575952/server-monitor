@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.app.AppInfoDao">
-    <resultMap id="resultMap" type="com.sxu.entity.app.AppInfo">
+<mapper namespace="com.dao.app.AppInfoDao">
+    <resultMap id="resultMap" type="com.entity.app.AppInfo">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="ACCOUNT_ID" property="accountId" jdbcType="CHAR"/>
         <result column="ACCOUNT" property="account" jdbcType="CHAR"/>
@@ -15,6 +15,7 @@
 		ID,ACCOUNT_ID, ACCOUNT,HOST_NAME, APP_PID,APP_NAME,CREATE_TIME
 	</sql>
 
+
     <select id="selectByAccountId" resultMap="resultMap" parameterType="java.lang.String">
         SELECT
         <include refid="tableColumnList"/>
@@ -22,12 +23,14 @@
         WHERE ACCOUNT_ID = #{accountId}
     </select>
 
+
     <select id="selectById" resultMap="resultMap" parameterType="java.lang.String">
         SELECT
         <include refid="tableColumnList"/>
         FROM APP_INFO
         WHERE ID=#{id}
     </select>
+
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
 		DELETE FROM APP_INFO 
@@ -43,7 +46,7 @@
         </foreach>
     </delete>
 
-    <insert id="save" parameterType="com.sxu.entity.app.AppInfo">
+    <insert id="save" parameterType="com.entity.app.AppInfo">
         INSERT INTO APP_INFO
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>
@@ -65,7 +68,8 @@
         </trim>
     </insert>
 
-    <update id="updateById" parameterType="com.sxu.entity.app.AppInfo">
+
+    <update id="updateById" parameterType="com.entity.app.AppInfo">
         UPDATE APP_INFO
         <set>
             <if test="hostname != null">
@@ -113,5 +117,6 @@
         </where>
         ORDER BY CREATE_TIME DESC
     </select>
+
 
 </mapper>

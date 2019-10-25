@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.host.IntrusionInfoDao">
-    <resultMap id="resultMap" type="com.sxu.entity.host.IntrusionInfo">
+<mapper namespace="com.dao.host.IntrusionInfoDao">
+    <resultMap id="resultMap" type="com.entity.host.IntrusionInfo">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="ACCOUNT_ID" property="accountId" jdbcType="CHAR"/>
         <result column="ACCOUNT" property="account" jdbcType="CHAR"/>
@@ -67,7 +67,7 @@
         </foreach>
     </insert>
 
-    <insert id="save" parameterType="com.sxu.entity.host.IntrusionInfo">
+    <insert id="save" parameterType="com.entity.host.IntrusionInfo">
         INSERT INTO INTRUSION_INFO
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>

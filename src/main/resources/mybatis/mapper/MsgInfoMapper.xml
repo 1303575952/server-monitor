@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.msg.MsgInfoDao">
-    <resultMap id="resultMap" type="com.sxu.entity.msg.MsgInfo">
+<mapper namespace="com.dao.msg.MsgInfoDao">
+    <resultMap id="resultMap" type="com.entity.msg.MsgInfo">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="ACCOUNT" property="account" jdbcType="CHAR"/>
         <result column="ACCOUNT_ID" property="accountId" jdbcType="CHAR"/>
@@ -52,7 +52,7 @@
         AND ACCOUNT_ID = #{accountId}
     </delete>
 
-    <insert id="save" parameterType="com.sxu.entity.msg.MsgInfo">
+    <insert id="save" parameterType="com.entity.msg.MsgInfo">
         INSERT INTO MSG_INFO
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>

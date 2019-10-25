@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sxu.dao.host.DeskStateDao">
-    <resultMap id="resultMap" type="com.sxu.entity.host.DeskState">
+<mapper namespace="com.dao.host.DeskStateDao">
+    <resultMap id="resultMap" type="com.entity.host.DeskState">
         <id column="ID" property="id" jdbcType="CHAR"/>
         <result column="ACCOUNT_ID" property="accountId" jdbcType="CHAR"/>
         <result column="ACCOUNT" property="account" jdbcType="CHAR"/>
@@ -42,12 +42,14 @@
 
     <delete id="deleteByAccountAndDate" parameterType="map">
 		DELETE FROM DESK_STATE WHERE  ACCOUNT_ID  = #{accountId}  <![CDATA[ AND CREATE_TIME <=#{endTime}
+
         ]]>
     </delete>
 
     <delete id="deleteByAccHname" parameterType="map">
 			DELETE FROM DESK_STATE WHERE ACCOUNT = #{account}
 			<![CDATA[ AND HOST_NAME  = #{hostname}
+
         ]]>
     </delete>
 
@@ -65,7 +67,7 @@
         </foreach>
     </delete>
 
-    <insert id="save" parameterType="com.sxu.entity.host.DeskState">
+    <insert id="save" parameterType="com.entity.host.DeskState">
         INSERT INTO DESK_STATE
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">ID,</if>
