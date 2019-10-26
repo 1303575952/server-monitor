@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <div class='navbar navbar-default' id='navbar'>
-    <a class='navbar-brand' target="_blank" href='https://github.com/tianshiyeben/wgcloud'>WGCLOUD运维监控</a>
+    <a class='navbar-brand' target="_blank" href='https://github.com/tianshiyeben/server-cloud'>server-cloud运维监控</a>
     <ul class='nav navbar-nav pull-right'>
     	<li class='dropdown user'>
      	  <a class='dropdown-toggle' data-toggle='dropdown'>
@@ -20,7 +20,7 @@
   </div>
 <%
 if(session.getAttribute("LOGIN_KEY")==null){
-	response.sendRedirect("/wgcloud/sys/login/toLogin");
+	response.sendRedirect("/server-cloud/sys/login/toLogin");
 }else{
 	out.println(session.getAttribute("LOGIN_KEY"));
 }

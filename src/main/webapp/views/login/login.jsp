@@ -3,7 +3,7 @@
 <html class="login-page" lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>WGClOUD登录页面</title>
+<title>server-cloud登录页面</title>
 
 <link type="text/css" rel="stylesheet" href="${ctx}/static/logincss/components.css.xhtml?ln=primefaces&amp;v=6.0" />
 <link type="text/css" rel="stylesheet" href="${ctx}/static/logincss/fix.css.xhtml?ln=suribootstrap&amp;v=2.0.10" />
